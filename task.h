@@ -1,17 +1,23 @@
 #pragma once
 
+#include <cstdint>
+
+
+
 class Task
 {
 public:
     Task();
 
-    virtual void operator() = 0;
+    using ID = uint16_t;
+
+    virtual void operator()() const = 0;
 
     template <typename T>
-    virtual T get_value() = 0;
+    virtual T get_value() const = 0;
 
-    uint16_t get_id() const;
+    ID get_id() const;
 
 private:
-    uint16_t m_id;
+    ID m_id;
 };

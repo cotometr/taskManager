@@ -2,7 +2,7 @@
 
 Task::Task()
 {
-    static uint16_t global_id;
+    static ID global_id;
 
     m_id = global_id;
 
@@ -11,5 +11,5 @@ Task::Task()
 
 uint16_t Task::get_id() const
 {
-    return id;
+    return m_id;
 }
